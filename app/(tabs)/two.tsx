@@ -2,13 +2,29 @@ import { StyleSheet } from 'react-native';
 
 import EditScreenInfo from '@/components/EditScreenInfo';
 import { Text, View } from '@/components/Themed';
+import LottieView from 'lottie-react-native';
+import MainText from '@/componentsCustom/Globals/MainText';
+import Box from '@/componentsCustom/Globals/Box';
+import { MYfonts } from '@/componentsCustom/Typography/Fonts';
 
 export default function TabTwoScreen() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Tab Two</Text>
-      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <EditScreenInfo path="app/(tabs)/two.tsx" />
+      <LottieView
+        style={{
+          width: "70%",
+          height: "70%",
+          alignItems: "center",
+
+        }}
+        source={require("../../assets/notfound.json")}
+        autoPlay
+        loop
+      />
+      <Box align='center'>
+        <MainText size={'sm'} fontFamily={MYfonts.Nunito_500Medium}>Click on a row to view more info</MainText>
+        <MainText size={'sm'} fontFamily={MYfonts.Nunito_500Medium}>Swipe to view more columns</MainText>
+      </Box>
     </View>
   );
 }
